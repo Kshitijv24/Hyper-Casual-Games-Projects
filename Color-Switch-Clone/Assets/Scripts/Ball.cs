@@ -25,4 +25,12 @@ public class Ball : MonoBehaviour
     {
         rb.velocity = Vector2.up * moveAmount;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Blue")
+        {
+            collision.gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
+        }
+    }
 }
