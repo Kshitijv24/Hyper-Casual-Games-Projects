@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class Ball : MonoBehaviour
 {
     [SerializeField] int moveAmount;
-
+    
     Rigidbody2D rb;
 
     private void Start()

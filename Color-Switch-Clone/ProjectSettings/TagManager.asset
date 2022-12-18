@@ -9,6 +9,7 @@ TagManager:
   - Pink
   - Purple
   - Ball
+  - Color_Change_Ball
   layers:
   - Default
   - TransparentFX

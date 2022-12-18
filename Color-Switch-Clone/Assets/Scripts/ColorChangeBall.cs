@@ -18,6 +18,7 @@ public class ColorChangeBall : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         SwitchBallTagAndColor(collision);
+        Destroy(gameObject);
     }
 
     private void SwitchBallTagAndColor(Collider2D collision)
