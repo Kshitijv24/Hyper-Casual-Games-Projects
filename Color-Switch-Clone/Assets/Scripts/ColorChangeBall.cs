@@ -4,6 +4,8 @@ public class ColorChangeBall : MonoBehaviour
 {
     [SerializeField] Color[] colors;
     [SerializeField] SpriteRenderer ballSpriteRenderer;
+    [SerializeField] GameObject smallCirclePrefab;
+    [SerializeField] Transform nextSpawnPoint;
 
     SpriteRenderer spriteRenderer;
     Color currentColor;
@@ -17,6 +19,7 @@ public class ColorChangeBall : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        SpawnNextCircle();
         SwitchBallTagAndColor(collision);
         Destroy(gameObject);
     }
@@ -43,5 +46,10 @@ public class ColorChangeBall : MonoBehaviour
             collision.gameObject.tag = "Purple";
             ballSpriteRenderer.color = colors[3];
         }
+    }
+
+    private void SpawnNextCircle()
+    {
+        Instantiate(smallCirclePrefab, nextSpawnPoint.position, transform.rotation);
     }
 }
